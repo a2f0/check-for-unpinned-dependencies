@@ -2,7 +2,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = require("fs");
-console.info('Checking for unpinned dependencies.');
+console.info('Checking for pinned dependencies.');
 let packageJson = JSON.parse((0, fs_1.readFileSync)("package.json", "utf8"));
 let dependencies = packageJson.dependencies;
 let devDependencies = packageJson.devDependencies;
@@ -12,6 +12,8 @@ let allDependencies = {
 };
 let unpinnedVersions = {};
 // Semantic versions
+// https://docs.npmjs.com/about-semantic-versioning
+// Note: everything after nn.nn.nn is permitted to allow alpha / beta versions.
 const acceptableVersions = new RegExp('^[0-9]+\\.[0-9]+\\.[0-9]+*');
 for (const entry of Object.entries(allDependencies)) {
     const dependency = entry[0];
