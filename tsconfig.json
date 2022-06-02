@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/strictest",
+  "compilerOptions": {
+    "types": ["node"],
+    "outDir": "build",
+    "target": "ESNext",
+    "module": "CommonJS",
+    "esModuleInterop": true,
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["build", "node_modules"]
+}
