@@ -1,12 +1,12 @@
 {
   "name": "@a2f0/check-for-unpinned-dependencies",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "",
   "scripts": {
     "build": "tsc"
   },
   "bin": {
-    "check-for-unpinned-dependencies": "build/index.js",
+    "check-for-unpinned-dependencies": "node build/index.js",
     "check-for-unpinned-dependencies-dev": "index.ts"
   },
   "files": [
