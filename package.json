@@ -6,10 +6,10 @@
     "build": "tsc"
   },
   "bin": {
-    "check-for-pinned-dependencies": "build/index.js",
-    "check-for-pinned-dependencies-dev": "index.ts"
+    "check-for-unpinned-dependencies": "build/index.js",
+    "check-for-unpinned-dependencies-dev": "index.ts"
   },
-  "author": "",
+  "author": "a2f0",
   "license": "MIT",
   "devDependencies": {
     "@tsconfig/strictest": "1.0.1",
