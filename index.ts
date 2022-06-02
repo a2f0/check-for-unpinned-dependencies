@@ -21,7 +21,7 @@ for (const entry of Object.entries(allDependencies)) {
   const dependency: string = entry[0];
   const version: string = entry[1];
   const isValid = acceptableVersions.test(version);
-  if (isValid === false) {
+  if (isValid === false && !version.startsWith('git')) {
     unpinnedVersions[dependency] = version;
   }
 }
