@@ -1,5 +1,5 @@
 {
-  "name": "@a2f0/check-for-pinned-dependencies",
+  "name": "@a2f0/check-for-unpinned-dependencies",
   "version": "0.0.1",
   "description": "",
   "scripts": {

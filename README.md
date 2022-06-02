@@ -8,4 +8,4 @@ npm i a2f0/check-for-unpinned-dependencies --save-dev
 
 ## Usage
 
-npx check-for-pinned-dependencies
+npx check-for-unpinned-dependencies

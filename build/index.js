@@ -2,7 +2,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = require("fs");
-console.info('Checking for pinned dependencies.');
+console.info('Checking for unpinned dependencies.');
 let packageJson = JSON.parse((0, fs_1.readFileSync)("package.json", "utf8"));
 let dependencies = packageJson.dependencies;
 let devDependencies = packageJson.devDependencies;
