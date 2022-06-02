@@ -12,7 +12,7 @@ let allDependencies = {
 };
 let unpinnedVersions = {};
 // Semantic versions
-const acceptableVersions = new RegExp('^[0-9]+\\.[0-9]+\\.[0-9]+$');
+const acceptableVersions = new RegExp('^[0-9]+\\.[0-9]+\\.[0-9]+*');
 for (const entry of Object.entries(allDependencies)) {
     const dependency = entry[0];
     const version = entry[1];
