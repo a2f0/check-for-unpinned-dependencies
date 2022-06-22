@@ -1,10 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUnpinnedDependencies = void 0;
-function getUnpinnedDependencies(deps, devDeps) {
+const fs_1 = require("fs");
+function getUnpinnedDependencies(file) {
+    let dependencies;
+    let devDependencies;
+    let json = JSON.parse((0, fs_1.readFileSync)(file, "utf8"));
+    if (file === 'package.json') {
+        dependencies = json.dependencies;
+        devDependencies = json.devDependencies;
+    }
+    else if (file === 'package-lock.json') {
+        dependencies = json.packages[""].dependencies;
+        devDependencies = json.packages[""].devDependencies;
+    }
+    else {
+        throw (Error(`${file} is not compatible with check-for-unpinned-dependencies`));
+    }
     let allDependencies = {
-        ...deps,
-        ...devDeps,
+        ...dependencies,
+        ...devDependencies,
     };
     let unpinnedVersions = {};
     // Semantic versions

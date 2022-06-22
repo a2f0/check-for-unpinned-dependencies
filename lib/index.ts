@@ -1,7 +1,25 @@
-export function getUnpinnedDependencies(deps: {[key: string]: string} , devDeps: {[key: string]: string}) {
+import { readFileSync } from 'fs';
+
+export function getUnpinnedDependencies(file: string) {
+
+    let dependencies
+    let devDependencies 
+    
+    let json = JSON.parse(readFileSync(file, "utf8"));
+
+    if (file === 'package.json') {
+        dependencies = json.dependencies;
+        devDependencies = json.devDependencies;
+    } else if (file === 'package-lock.json') {
+        dependencies = json.packages[""].dependencies;
+        devDependencies = json.packages[""].devDependencies;
+    } else {
+        throw (Error(`${file} is not compatible with check-for-unpinned-dependencies`))
+    }
+    
     let allDependencies: {[key: string]: string} = {
-      ...deps,
-      ...devDeps,
+      ...dependencies,
+      ...devDependencies,
     }
     let unpinnedVersions: {[key: string]: string} = {}
     // Semantic versions
