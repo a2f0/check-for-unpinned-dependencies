@@ -7,6 +7,6 @@ Note: dependencies with the [git URLs](https://docs.npmjs.com/cli/v8/configuring
 ## Usage
 
 ```sh
-npm i a2f0/check-for-unpinned-dependencies --save-dev
+npm i @a2f0/check-for-unpinned-dependencies --save-dev
 npx check-for-unpinned-dependencies
 ```
