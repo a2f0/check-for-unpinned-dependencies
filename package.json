@@ -1,7 +1,7 @@
 {
   "name": "@a2f0/check-for-unpinned-dependencies",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Prevent unpinned dependencies in package.json and package-lock.json.",
   "scripts": {
     "build": "tsc"
   },
